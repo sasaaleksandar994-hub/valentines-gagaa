@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      background: #ffd6e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 300px;
+      position: relative;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background: hotpink;
+      color: white;
+    }
+
+    #no {
+      position: absolute;
+      background: lightgray;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h2>Gaga, hoćeš li biti moj/a Valentin? 💘</h2>
+    <button id="yes" onclick="yesClicked()">Yes 💖</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="text-align:center;">
+          <h1 style="color: hotpink;">🎉 GAGA JE REKLA YES!!! 🎉</h1>
+          <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" 
+               alt="Happy dance" width="300">
+          <p>💖💖💖</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
